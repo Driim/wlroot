@@ -164,7 +164,7 @@ static bool atomic_crtc_set_cursor(struct wlr_drm_backend *drm,
 	atomic_begin(crtc, &atom);
 
 	if (bo) {
-		set_plane_props(&atom, plane, crtc->id, get_fb_for_bo(bo), false);
+		set_plane_props(&atom, plane, crtc->id, get_fb_for_bo(bo, plane->drm_format), false);
 	} else {
 		atomic_add(&atom, plane->id, plane->props.fb_id, 0);
 		atomic_add(&atom, plane->id, plane->props.crtc_id, 0);

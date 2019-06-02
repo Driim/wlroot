@@ -28,6 +28,8 @@ struct wlr_drm_surface {
 	struct gbm_surface *gbm;
 	EGLSurface egl;
 
+	uint32_t gbm_format;
+
 	struct gbm_bo *front;
 	struct gbm_bo *back;
 };
